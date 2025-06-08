@@ -1,0 +1,64 @@
+
+## Take-Home Assignment: Credit Card Optimizer
+
+### Objective
+Develop a web application using Next.js that assists users in optimizing their credit card rewards. The application should allow users to input their current credit cards and an anticipated spending amount. Based on this information, the system should recommend the next best credit card(s) to acquire to maximize reward points.
+  
+
+#### Requirements
+
+#### 1. Core Functionality
+
+**User Input**:
+Ability to add and manage a list of current credit cards.
+Input an upcoming spending amount.
+
+Algorithm:
+Implement a function with the signature:
+```o(current_cards, upcoming_spend_amount) => [future_cards]```
+The function should return a list of recommended credit cards that, if acquired, would maximize the user's reward points based on the upcoming spend. Note that future_cards should come with a schedule on when to get them.
+
+Consider using optimization techniques such as mixed-integer programming, machine learning models, or heuristic algorithms. Be creative in your approach.
+
+**Constraints**:
+Incorporate realistic constraints, such as:
+- Limitations on how frequently a user can apply for new credit cards.
+- Lifetime signup bonuses
+- Eligibility criteria for certain credit cards (chase won't let you apply for a new card if have 5 cards open in the last 24 months)
+
+#### 2. Technical Stack
+
+**Frontend**:
+Suggest use of React/Next.js for the frontend framework.
+UI/UX design is not the focus; a minimal and functional interface is sufficient.
+**Backend**:
+Implement necessary backend logic within the React/Next.js framework (API routes or server-side functions).
+Use any libraries or tools you deem appropriate for the optimization algorithm; mixed-integer programming, heuristics, whatever works. 
+
+Feel free to use any boilerplate, as a matter of fact, we recommend it.
+
+#### 3. Data Handling
+
+You may use real [credit card structure data](https://raw.githubusercontent.com/andenacitelli/credit-card-bonuses-api/main/exports/data.json). Database is not a part of the program, feel free to put in it memory for cross session persistence, also feel free to utilize client side persistence. 
+
+#### 4. Tests
+
+Write unit tests, do not need integration tests as UI test is sufficient
+
+#### 5. Extra Credit
+
+- Feel free to add more constraints/configurations to the algorithm, this may include:
+	- which point program currency user wants to optimize for
+	- do users care more about cash back vs earning for travel etc
+	- category of expenditure the user wants to do (cards will offer different earnings multiplier based on category, e.g. American Express Gold will give you 4x on dining)
+	- have the algorithm take in valuation of different points and miles currencies (e.g. American Express points have different value than Marriott Bonvoy point; this can be an arbitrary amount you set up). 
+	- Take into account annual fees for credit cards
+- Optimizing solutions:
+	- have a logical explanation generated per optimizer run
+	- have output of the algorithm be actionable
+	- include credit card usage for current cards, take into account annual fees and maybe suggest that users close their accounts to save money
+- AI / Human interface:
+	- We recommend using: https://mastra.ai/en/docs/frameworks/next-js 
+	- This can just be a chat bot, voice bot, etc
+	- be creative 
+
